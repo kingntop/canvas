@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+
+<body>
+    <div>
+        <div>
+            <span>
+                <canvas id="canvas" width="600" height="500">
+                </canvas>
+        </div>
+        <div>
+            <input type="text" name="x" id="x">
+        </div>
+
+        </span>
+    </div>
+    <style>
+        #canvas {
+            background-color: brown;
+
+        }
+    </style>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        // draw image
+        make_base();
+
+        // draw rectangle
+        context.beginPath();
+        context.rect(20, 20, 150, 100);
+        context.stroke();
+
+        context.fillRect(0, 0, 50, 50);
+
+        function make_base() {
+            base_image = new Image();
+            base_image.src = 'img.png';
+            base_image.onload = function () {
+                context.drawImage(base_image, 0, 0, 488, 263);
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
